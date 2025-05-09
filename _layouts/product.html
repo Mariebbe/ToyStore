@@ -1,7 +1,15 @@
 ---
 layout: default
 ---
-
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'product_page_view',
+    product_id: '{{ page.identifier }}',
+    product_name: '{{ page.name }}',
+    product_price: '{{ page.price }}'
+  });
+</script>
 <div class="container">
   <div class="row">
     <div class="col py-4">
