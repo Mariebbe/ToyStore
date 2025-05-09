@@ -28,6 +28,15 @@ layout: default
               <h2>{{ page.name }}</h2>
               <p>{{ content }}</p>
               {% include product-definition.html %}
+              <button onclick="window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'add_to_cart',
+  product_id: '{{ page.identifier }}',
+  product_name: '{{ page.name }}',
+  product_price: '{{ page.price }}'
+});">
+  Add to Cart
+</button>
             </div>
             <div class="col-4">
               <img src="{{ page.image | relative_url }}" alt="{{ page.name }} product image" class="w-100">
